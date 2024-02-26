@@ -1,1 +1,3 @@
 # shitfiles
+
+os: endeavour-os
