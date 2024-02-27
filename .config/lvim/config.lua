@@ -12,8 +12,10 @@ lvim.plugins = {
 
 lvim.colorscheme = "tokyonight-storm"
 
-  -- move between buffers
-  lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
-  lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+-- move between buffers
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 
-  lvim.keys.normal_mode["tr"] = ":TroubleToggle<CR>"
+lvim.keys.normal_mode["tr"] = ":TroubleToggle<CR>"
+
+vim.opt.relativenumber = true
