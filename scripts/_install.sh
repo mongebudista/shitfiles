@@ -29,15 +29,46 @@ logo "dança da bundinha peladinha"
 
 pacman -Sy
 
+clear
+
 printf "Installing neofetch, exa, tmux and bitwarden\n\n"
 
 sleep 3
 
-pacman -S --noconfirm neofetch exa tmux bitwarden alacritty rustup
+# Array com os nomes dos pacotes
+pacotes=(
+  "neofetch"
+  "bitwarden"
+  "exa"
+  "alacritty"
+  "rustup"
+  "tmux"
+  "adobe-source-han-sans-cn-fonts"
+  "adobe-source-han-sans-jp-fonts"
+  "adobe-source-han-sans-kr-fonts"
+  "adobe-source-han-sans-otc-fonts"
+  "adobe-source-han-sans-tw-fonts"
+)
 
-printf "Installing asian fonts\n\n"
+# Função para verificar se o pacote está instalado e instalá-lo se não estiver
+instalar_pacote() {
+    if ! command -v "$1" &> /dev/null; then
+        echo "Instalando $1..."
+        sudo pacman -S --noconfirm "$1"
+    else
+        echo "$1 já está instalado."
+    fi
+}
+
+# Itera sobre o array de pacotes e verifica/instala cada um
+for pacote in "${pacotes[@]}"; do
+    instalar_pacote "$pacote"
+done
+
+clear
+
+logo 'DONE!'
 
 sleep 3
 
-pacman -S --noconfirm adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts adobe-source-han-sans-tw-fonts
-
+exit
