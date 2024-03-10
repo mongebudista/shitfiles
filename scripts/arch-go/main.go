@@ -12,7 +12,7 @@ var pacotes = []string{
 	"bitwarden",
 	"exa",
 	"neofetch",
-	"alacritty",
+	"kitty",
 	"rustup",
 	"tmux",
   "git",
