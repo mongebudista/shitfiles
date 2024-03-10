@@ -31,8 +31,7 @@ pacman -Sy
 
 clear
 
-printf "Installing neofetch, exa, tmux and bitwarden\n\n"
-
+printf "Installing packages...\n\n"
 sleep 3
 
 # Array com os nomes dos pacotes
@@ -43,6 +42,9 @@ pacotes=(
   "alacritty"
   "rustup"
   "tmux"
+  "neovim"
+  "git"
+  "go"
   "adobe-source-han-sans-cn-fonts"
   "adobe-source-han-sans-jp-fonts"
   "adobe-source-han-sans-kr-fonts"
@@ -67,8 +69,5 @@ done
 
 clear
 
-logo 'DONE!'
-
-sleep 3
-
-exit
+logo 'OK!'
+sleep 1
