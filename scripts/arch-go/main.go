@@ -23,7 +23,6 @@ var logo = `
 
 var pacotes = []string{
 	"base-devel",
-	"bitwarden",
 	"firefox",
 	"exa",
   "zsh",
@@ -35,13 +34,11 @@ var pacotes = []string{
 	"go",
 	"neovim",
   "vim",
-  "jre8",
   "ranger",
   "w3m",
   "wget",
   "curl",
   "zip",
-  "fortune",
 	"adobe-source-han-sans-cn-fonts",
 	"adobe-source-han-sans-jp-fonts",
 	"adobe-source-han-sans-kr-fonts",
@@ -77,7 +74,9 @@ func install_package(packageName string) {
 	cmd := exec.Command("sudo", "pacman", "-S", "--noconfirm", packageName)
   err := cmd.Run()
 	fmt.Printf("Instalando %s...", packageName)
-  fmt.Printf("%s", logo)
+
+  cmd.Stdout = os.Stdout
+  cmd.Stderr = os.Stderr
 
 	if err != nil {
 		fmt.Printf("Erro ao instalar %s: %v", packageName, err)
