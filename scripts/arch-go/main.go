@@ -65,7 +65,7 @@ func main() {
 		if !is_installed(pacote) {
 			install_package(pacote)
 		} else {
-			fmt.Printf("%s já está instalado ✅\n", pacote)
+			fmt.Printf("%s is already installed. ✅\n", pacote)
 			time.Sleep(1 * time.Second)
 		}
 	}
@@ -84,13 +84,14 @@ func is_installed(packageName string) bool {
 func install_package(packageName string) {
 	cmd := exec.Command("sudo", "pacman", "-S", "--noconfirm", packageName)
   err := cmd.Run()
-	fmt.Printf("Instalando %s...", packageName)
+	fmt.Printf("Installing %s... 📝\n", packageName)
+  time.Sleep(1 * time.Second)
 
   cmd.Stdout = os.Stdout
   cmd.Stderr = os.Stderr
 
 	if err != nil {
-		fmt.Printf("Erro ao instalar %s: %v", packageName, err)
+		fmt.Printf("Error while try install %s: %v", packageName, err)
 		os.Exit(1)
 	}
 
