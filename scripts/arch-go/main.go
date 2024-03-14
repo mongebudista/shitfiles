@@ -18,14 +18,15 @@ var logo = `
     ⣿⣷⣬⣭⣥⣶⣬⣙⡛⠻⢿⣿⣿⣿⣿⣿⣿⣿⠋⠀⠈⠻⣿⣿⣿⣿⣿⣿⡟⣸ 
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣬⣍⣙⠻⠿⠿⠀⠀⠀⠀⢻⣿⣿⣿⠿⢋⣼⣿ 
     ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣄⡀⠀⣀⣬⣭⣤⣶⣶⣿⣿⣿
-    yay Dotfiles v0.0.1
-
+    yay Script v0.0.1
 `
 
 var pacotes = []string{
 	"base-devel",
 	"bitwarden",
+	"firefox",
 	"exa",
+  "zsh",
 	"neofetch",
 	"alacritty",
 	"rustup",
@@ -33,12 +34,19 @@ var pacotes = []string{
 	"git",
 	"go",
 	"neovim",
+  "vim",
+  "jre8",
+  "ranger",
+  "w3m",
+  "wget",
+  "curl",
+  "zip",
+  "fortune",
 	"adobe-source-han-sans-cn-fonts",
 	"adobe-source-han-sans-jp-fonts",
 	"adobe-source-han-sans-kr-fonts",
 	"adobe-source-han-sans-otc-fonts",
 	"adobe-source-han-sans-tw-fonts",
-	"firefox",
 }
 
 
@@ -57,22 +65,21 @@ func main() {
 
 func is_installed(packageName string) bool {
 	cmd := exec.Command("pacman", "-Q", packageName)
+  err := cmd.Run()
 
-	if err := cmd.Run(); err != nil {
+	if err != nil {
 		return false
 	}
 	return true
 }
 
 func install_package(packageName string) {
-	fmt.Printf("Instalando %s...", packageName)
 	cmd := exec.Command("sudo", "pacman", "-S", "--noconfirm", packageName)
-  exec.Command("clear")
+  err := cmd.Run()
+	fmt.Printf("Instalando %s...", packageName)
   fmt.Printf("%s", logo)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
 
-	if err := cmd.Run(); err != nil {
+	if err != nil {
 		fmt.Printf("Erro ao instalar %s: %v", packageName, err)
 		os.Exit(1)
 	}
