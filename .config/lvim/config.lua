@@ -19,3 +19,5 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["tr"] = ":TroubleToggle<CR>"
 
 vim.opt.relativenumber = true
+
+lvim.builtin.alpha.dashboard.section.header.val = { "eita" }
