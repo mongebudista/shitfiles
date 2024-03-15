@@ -51,11 +51,13 @@ var pacotes = []string{
 	"ranger",
 	"rustup",
 	"tmux",
+	"ttf-hack-nerd",
 	"ttf-inconsolata",
 	"ttf-jetbrains-mono",
 	"ttf-jetbrains-mono-nerd",
 	"ttf-joypixels",
 	"ttf-terminus-nerd",
+	"ttf-unifont",
 	"vim",
 	"w3m",
 	"wget",
@@ -66,10 +68,10 @@ var pacotes = []string{
 func main() {
 	fmt.Printf("%s", logo)
 
-  utils.InstallYay()
-  fmt.Println("YAY INSTALLED")
-  time.Sleep(1 * time.Second)
-  utils.InstallLunarVim()
+	utils.InstallYay()
+	fmt.Println("YAY INSTALLED")
+	time.Sleep(1 * time.Second)
+	utils.InstallLunarVim()
 
 	for _, pacote := range pacotes {
 		if !utils.IsInstalled(pacote) {

@@ -1,0 +1,17 @@
+[font]
+size = 14.0
+family = "Hack Nerd Font"
+
+
+[window]
+startup_mode = "Windowed"
+dynamic_padding = true
+opacity = 0.95
+
+[window.padding]
+x = 5
+y = 5
+
+#[window.dimensions]
+#columns = 90
+#lines = 25
