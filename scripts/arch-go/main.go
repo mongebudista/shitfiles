@@ -57,7 +57,6 @@ var pacotes = []string{
 	"ttf-jetbrains-mono-nerd",
 	"ttf-joypixels",
 	"ttf-terminus-nerd",
-	"ttf-unifont",
 	"vim",
 	"w3m",
 	"wget",
