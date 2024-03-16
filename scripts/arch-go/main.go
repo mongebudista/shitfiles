@@ -81,4 +81,5 @@ func main() {
 		}
 	}
 
+  utils.LoadConfigs()
 }

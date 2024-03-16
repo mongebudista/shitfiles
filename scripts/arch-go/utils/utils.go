@@ -87,3 +87,16 @@ func requireRoot() error {
 	}
 	return nil
 }
+
+func LoadConfigs() {
+	homeDir, _ := os.UserHomeDir()
+
+	fmt.Printf("Copying dotfiles...\n")
+	time.Sleep(1 * time.Second)
+	cmd := exec.Command("sudo", "cp", "-r", "./.config", homeDir)
+	err := cmd.Run()
+
+	if err != nil {
+		return
+	}
+}
