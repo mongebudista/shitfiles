@@ -292,6 +292,9 @@ exec --no-startup-id dunst
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id libinput-gestures-setup start
 
+# transparent window
+exec --no-startup-id picom -b
+
 #Screenshoter
 bindsym --release Shift+Print exec --no-startup-id sh $HOME/.config/i3/screenshot.sh partial
 bindsym --release Ctrl+Shift+Print exec --no-startup-id sh $HOME/.config/i3/screenshot.sh partial clipboard
@@ -306,5 +309,5 @@ bindsym --release Ctrl+Mod1+Print exec --no-startup-id sh $HOME/.config/i3/scree
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
 bindsym $mod+Shift+t exec --no-startup-id termite
-bindsym Ctrl+Mod1+t exec --no-startup-id termite
+#bindsym Ctrl+Mod1+t exec --no-startup-id termite
 bindsym $mod+l exec --no-startup-id sh $HOME/.config/i3/lock.sh suspend
