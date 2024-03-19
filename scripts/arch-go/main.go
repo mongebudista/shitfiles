@@ -36,6 +36,7 @@ var pacotes = []string{
 	"bitwarden",
 	"pulseaudio",
 	"pulseaudio-alsa",
+  "pulseaudio-bluetooth",
 	"alsa-utils",
 	"lightdm",
 	"lightdm-gtk-greeter",
