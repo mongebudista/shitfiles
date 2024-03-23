@@ -43,6 +43,8 @@ var pacotes = []string{
 	"base-devel",
 	"curl",
   "discord",
+  "docker",
+  "docker-compose",
 	"exa",
 	"feh",
 	"firefox",
