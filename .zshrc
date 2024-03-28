@@ -104,6 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias rungo="~/scripts/rungo.sh"
+
 alias anime="ani-cli"
 alias nvim="lvim"
 alias ls="exa --icons"
@@ -111,7 +113,7 @@ alias ll="exa -l --icons"
 alias dev="~/scripts/tmux-dev.sh"
 alias g="git"
 
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
 
 # pnpm
 export PNPM_HOME="/home/yay/.local/share/pnpm"
@@ -120,3 +122,14 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+source /usr/share/nvm/init-nvm.sh
+
+# bun completions
+[ -s "/home/ranma/.bun/_bun" ] && source "/home/ranma/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:$(go env GOROOT)/bin

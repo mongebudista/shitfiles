@@ -68,6 +68,7 @@ var pacotes = []string{
 	"ttf-jetbrains-mono-nerd",
 	"ttf-joypixels",
 	"vim",
+	"vulkan-radeon",
 	"w3m",
 	"wget",
 	"zip",
@@ -90,6 +91,7 @@ func main() {
 			time.Sleep(300 * time.Millisecond)
 		}
 	}
+
 
   utils.LoadConfigs()
 }
