@@ -52,6 +52,7 @@ var pacotes = []string{
 	"geany",
 	"git",
 	"go",
+  "lazygit",
 	"libwebp",
 	"neofetch",
 	"neovim",
